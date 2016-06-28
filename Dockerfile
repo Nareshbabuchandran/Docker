@@ -1,0 +1,14 @@
+FROM tomcat:7.0.69-jre8
+
+MAINTAINER Nareshbabu Chandran<nareshbabu.chandran@polarisft.com>
+
+USER root
+
+
+COPY Naukri.war /usr/local/tomcat/webapps
+# RUN apt-get update && apt-get install tomcat7/
+				
+CMD ["-c","/usr/local/tomcat/bin/startup.sh;tail -f /dev/null"] 
+
+ENTRYPOINT ["/bin/bash"]
+EXPOSE 8080
